@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Richmond Activities – Task 2</title>
+<style>
+:root{--navy:#173b67;--blue:#2368a0;--red:#b34242;--pale:#eef6ff;--gold:#f3c969;--ink:#243247;--green:#18794e}
+*{box-sizing:border-box}body{margin:0;background:#f4f7fb;color:var(--ink);font:16px/1.6 Arial,Helvetica,sans-serif}
+header{background:linear-gradient(120deg,#173b67,#287cb4);color:white;padding:28px 18px;text-align:center;border-bottom:6px solid var(--gold)}
+header h1{margin:0;font-family:Georgia,serif;font-size:clamp(1.6rem,4vw,2.4rem)}header p{margin:7px 0 0}
+main{max-width:1000px;margin:24px auto;padding:0 14px 40px}.toolbar{position:sticky;top:0;z-index:3;background:#fff;padding:12px;border:1px solid #d5deea;border-radius:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;box-shadow:0 3px 12px #1b355414;margin-bottom:20px}
+button{border:0;border-radius:8px;background:var(--blue);color:white;padding:10px 15px;font-weight:bold;cursor:pointer}button.secondary{background:#e8eef6;color:var(--navy)}button:hover{filter:brightness(.95)}
+.name{flex:1;min-width:220px;padding:10px;border:1px solid #bdc9d8;border-radius:8px}
+section{background:white;border:1px solid #d7e0eb;border-radius:14px;padding:22px;margin:18px 0;box-shadow:0 3px 12px #1b35540b}
+h2{color:var(--navy);margin-top:0;border-bottom:2px solid #e8eff7;padding-bottom:8px}h3{color:#315f87;margin-bottom:8px}
+.reading{background:#f8fbff;border-left:4px solid #76a9d6;padding:15px;border-radius:7px}
+.question{padding:12px 0;border-bottom:1px solid #edf0f4}.question:last-child{border-bottom:0}
+label{display:block;margin:5px 0}.inline-options label{display:inline-block;margin-right:18px}
+input[type=text],select{padding:9px;border:1px solid #b9c7d8;border-radius:7px;max-width:100%;font:inherit}input[type=text]{width:min(100%,330px)}.short{width:100px!important}
+.feedback{font-weight:bold;font-size:.92rem;margin-top:4px}.correct{color:var(--green)}.incorrect{color:#b42318}.muted{color:#5c6b7d;font-size:.92rem}
+.score{font-size:1.2rem;font-weight:bold;color:var(--navy)}.passage{white-space:pre-line}.matchrow{display:grid;grid-template-columns:minmax(180px,1fr) minmax(180px,1fr);gap:12px;align-items:center;padding:7px 0}.matchrow select{width:100%}
+footer{text-align:center;color:#65758b;padding:20px}
+@media(max-width:600px){section{padding:15px}.matchrow{grid-template-columns:1fr}.toolbar{position:static}}
+@media print{body{background:white}.toolbar,button,footer{display:none!important}section{box-shadow:none;break-inside:avoid}main{max-width:none}}
+</style>
+</head>
+<body>
+<header><h1>RICHMOND ACTIVITIES – TASK 2</h1><p>Vocabulary · Grammar · Reading Comprehension</p></header>
+<main>
+<div class="toolbar">
+<div style="min-width:220px;font-weight:bold;color:#173b67">Teacher: Yuleidys Rodríguez</div>
+<label style="margin:0;flex:1">Student name <input class="name" id="studentName" type="text" placeholder="Write your full name"></label>
+<button onclick="checkAnswers()">Check answers</button><button class="secondary" onclick="showAnswers()">Show answer key</button><button class="secondary" onclick="resetQuiz()">Try again</button><button class="secondary" onclick="window.print()">Print / Save PDF</button>
+</div>
+<div id="result" class="score" aria-live="polite"></div>
+
+<section><h2>1. Vocabulary: Megan Hine</h2>
+<p>Read the text and match the actions with the time they happened.</p>
+<div class="reading"><h3>Who is she?</h3>
+<p>Megan Hine is a survival expert. She visits some of the wildest places on Earth for TV survival shows. Her job is to find water, food, and shelter, and to keep people alive!</p>
+<p>She started very young. When she was only six years old, she climbed the highest mountain in Wales. In 2006, she lived on her own in a forest for three months. She caught fish with her hands! She woke up at 5:00 a.m. each day and washed in a cold lake. She didn’t take a shower at all in those three months!</p>
+<p>In December 2007, she got very sick when an insect bit her. A few years ago, she almost died when a family of lions tried to eat her in her tent in Namibia.</p>
+<p>In 2016, she decided to write a book: <em>Mind of a Survivor</em>. The narrator finished it last night.</p></div>
+<div id="q1">
+<div class="matchrow"><strong>a. Climbed a mountain in Wales</strong><select data-answer="When she was six"><option value="">Choose a time…</option><option>In December</option><option>Last night</option><option>When she was six</option><option>A few years ago</option><option>At 5 am</option><option>In 2006</option></select></div>
+<div class="matchrow"><strong>b. Lived in a forest</strong><select data-answer="In 2006"><option value="">Choose a time…</option><option>In December</option><option>Last night</option><option>When she was six</option><option>A few years ago</option><option>At 5 am</option><option>In 2006</option></select></div>
+<div class="matchrow"><strong>c. Woke up in the forest</strong><select data-answer="At 5 am"><option value="">Choose a time…</option><option>In December</option><option>Last night</option><option>When she was six</option><option>A few years ago</option><option>At 5 am</option><option>In 2006</option></select></div>
+<div class="matchrow"><strong>d. Got sick</strong><select data-answer="In December"><option value="">Choose a time…</option><option>In December</option><option>Last night</option><option>When she was six</option><option>A few years ago</option><option>At 5 am</option><option>In 2006</option></select></div>
+<div class="matchrow"><strong>e. Almost died</strong><select data-answer="A few years ago"><option value="">Choose a time…</option><option>In December</option><option>Last night</option><option>When she was six</option><option>A few years ago</option><option>At 5 am</option><option>In 2006</option></select></div>
+</div></section>
+
+<section><h2>2. Grammar: Simple Past</h2><p>Complete the questions with the simple past form of the verbs in parentheses. Then ask follow-up questions.</p>
+<p><strong>When was the last time you…</strong></p>
+<div class="question">1. <input type="text" data-answer="ate" placeholder="(eat) outside"> outside? <span class="feedback"></span></div>
+<div class="question">2. <input type="text" data-answer="saw" placeholder="(see) a wild animal"> a wild animal? <span class="feedback"></span></div>
+<div class="question">3. <input type="text" data-answer="cooked" placeholder="(cook) dinner"> dinner? <span class="feedback"></span></div>
+<div class="question">4. <input type="text" data-answer="bought" placeholder="(buy) new shoes"> some new shoes? <span class="feedback"></span></div>
+<div class="question">5. <input type="text" data-answer="gave" placeholder="(give) someone a present"> someone a present? <span class="feedback"></span></div>
+<div class="question">6. <input type="text" data-answer="shared" placeholder="(share) a funny video"> a funny video on social media? <span class="feedback"></span></div>
+<p class="muted">Follow-up questions are personal and are not automatically graded.</p></section>
+
+<section><h2>3. Grammar: Past Simple or Past Continuous</h2><h3>Text 1: Saved by the cat!</h3>
+<p>Complete the story with the correct form of each verb.</p>
+<div class="reading passage">One night in 2010, the Lineham family in Birmingham, England
+<select class="short" data-answer="were sleeping"><option value="">Select…</option><option>were sleeping</option><option>slept</option></select> (sleep)
+when Graham Lineham
+<select class="short" data-answer="heard"><option value="">Select…</option><option>was hearing</option><option>heard</option></select> (hear) something. Their cat Sooty
+<select class="short" data-answer="was making"><option value="">Select…</option><option>made</option><option>was making</option></select> (make) noise outside the bedroom door. Graham
+<select class="short" data-answer="opened"><option value="">Select…</option><option>was opening</option><option>opened</option></select> (open) the door and smelled smoke. He immediately
+<select class="short" data-answer="woke"><option value="">Select…</option><option>woke</option><option>was waking</option></select> (wake) his family and they all
+<select class="short" data-answer="escaped"><option value="">Select…</option><option>were escaping</option><option>escaped</option></select> (escape) before it was too late.</div>
+<p class="muted">The provided material includes this story only; no second animal story is shown in the document.</p></section>
+
+<section><h2>4. Grammar: School Rules Around the World</h2><p>Select the correct words to complete each sentence. Choose the option that best fits the meaning of the text.</p>
+<div class="question">a. In some schools in the U.S., students <select data-answer="have to"><option value="">Choose…</option><option>have to</option><option>don’t have to</option></select> wear special indoor shoes in the school building. <span class="feedback"></span></div>
+<div class="question">b. Chinese students <select data-answer="have to"><option value="">Choose…</option><option>can’t</option><option>have to</option></select> sleep for 30 minutes in their classrooms after lunch. <span class="feedback"></span></div>
+<div class="question">c. These students <select data-answer="have to"><option value="">Choose…</option><option>have to</option><option>can’t</option></select> sleep at their desks, and they’re uncomfortable. <span class="feedback"></span></div>
+<div class="question">d. Some teachers in the UK <select data-answer="can’t"><option value="">Choose…</option><option>don’t have to</option><option>can’t</option></select> use a red pen to correct students’ work because red makes students unhappy. <span class="feedback"></span></div>
+<div class="question">e. They <select data-answer="have to"><option value="">Choose…</option><option>have to</option><option>don’t have to</option></select> use softer colors like purple or green. <span class="feedback"></span></div>
+<div class="question">f. Children in an elementary school in Sydney, Australia <select data-answer="can’t"><option value="">Choose…</option><option>have to</option><option>can’t</option></select> stand on their hands in the playground because the school says it is dangerous. <span class="feedback"></span></div>
+<div class="question">g. Students in Japan <select data-answer="don’t have to"><option value="">Choose…</option><option>don’t have to</option><option>can’t</option></select> stay in every night, but if they want to go out, some students <select data-answer="have to"><option value="">Choose…</option><option>have to</option><option>don’t have to</option></select> ask their teacher, even on the weekend. <span class="feedback"></span></div>
+<div class="question">h. Students in France <select data-answer="can’t"><option value="">Choose…</option><option>can’t</option><option>don’t have to</option></select> have tomato ketchup on their food at lunchtime because it’s not healthy and it is “too American.” <span class="feedback"></span></div>
+<p class="muted">Note: the Chinese-student sentence is reproduced from the supplied material, although its options do not make the sentence fully natural in English.</p></section>
+
+<section><h2>5. Grammar: Predictions</h2><p>Match each noun with the correct prediction.</p>
+<div class="matchrow"><strong>a. Scientists</strong><select data-answer="Find a cure for cancer"><option value="">Choose a prediction…</option><option>Increase to more than 8 billion</option><option>Build more homes in this city</option><option>Do tasks around the house</option><option>Be the most popular language</option><option>Find a cure for cancer</option><option>Get hotter</option><option>Drive themselves</option><option>Only take courses online</option></select></div>
+<div class="matchrow"><strong>b. The government</strong><select data-answer="Build more homes in this city"><option value="">Choose a prediction…</option><option>Increase to more than 8 billion</option><option>Build more homes in this city</option><option>Do tasks around the house</option><option>Be the most popular language</option><option>Find a cure for cancer</option><option>Get hotter</option><option>Drive themselves</option><option>Only take courses online</option></select></div>
+<div class="matchrow"><strong>c. The world’s population</strong><select data-answer="Increase to more than 8 billion"><option value="">Choose a prediction…</option><option>Increase to more than 8 billion</option><option>Build more homes in this city</option><option>Do tasks around the house</option><option>Be the most popular language</option><option>Find a cure for cancer</option><option>Get hotter</option><option>Drive themselves</option><option>Only take courses online</option></select></div>
+<div class="matchrow"><strong>d. Robots</strong><select data-answer="Do tasks around the house"><option value="">Choose a prediction…</option><option>Increase to more than 8 billion</option><option>Build more homes in this city</option><option>Do tasks around the house</option><option>Be the most popular language</option><option>Find a cure for cancer</option><option>Get hotter</option><option>Drive themselves</option><option>Only take courses online</option></select></div>
+<div class="matchrow"><strong>e. English</strong><select data-answer="Be the most popular language"><option value="">Choose a prediction…</option><option>Increase to more than 8 billion</option><option>Build more homes in this city</option><option>Do tasks around the house</option><option>Be the most popular language</option><option>Find a cure for cancer</option><option>Get hotter</option><option>Drive themselves</option><option>Only take courses online</option></select></div>
+<div class="matchrow"><strong>f. Most cars</strong><select data-answer="Drive themselves"><option value="">Choose a prediction…</option><option>Increase to more than 8 billion</option><option>Build more homes in this city</option><option>Do tasks around the house</option><option>Be the most popular language</option><option>Find a cure for cancer</option><option>Get hotter</option><option>Drive themselves</option><option>Only take courses online</option></select></div>
+<div class="matchrow"><strong>g. Summers</strong><select data-answer="Get hotter"><option value="">Choose a prediction…</option><option>Increase to more than 8 billion</option><option>Build more homes in this city</option><option>Do tasks around the house</option><option>Be the most popular language</option><option>Find a cure for cancer</option><option>Get hotter</option><option>Drive themselves</option><option>Only take courses online</option></select></div>
+<div class="matchrow"><strong>h. Students</strong><select data-answer="Only take courses online"><option value="">Choose a prediction…</option><option>Increase to more than 8 billion</option><option>Build more homes in this city</option><option>Do tasks around the house</option><option>Be the most popular language</option><option>Find a cure for cancer</option><option>Get hotter</option><option>Drive themselves</option><option>Only take courses online</option></select></div>
+</section>
+
+<section><h2>6. Reading Comprehension: The Homeless World Cup</h2>
+<div class="reading"><h3>THE HOMELESS WORLD CUP</h3>
+<p>Around the world, roughly 100 million people are homeless. Although most of us think that we should try to get these people off the streets and back to work, few people know how they can meaningfully help homeless people.</p>
+<p>Mel Young from Scotland and Harald Schmied from Austria had a great idea. They are the founders of the Homeless World Cup (HWC). The HWC is an international soccer tournament for people who are homeless. The event began in 2003 in Austria, and it is held every year. More than 500 players from over 50 countries around the world play against each other. Every player has experienced homelessness at some time. Thousands of people come to watch the games, and millions more watch online.</p>
+<p>The main purpose of the HWC is to improve the lives of the people involved. Homeless people often lose confidence and feel helpless. Young and Schmied saw soccer as a way to help people feel good about themselves and learn skills that are useful in a job. When people become involved in soccer, they start to form new relationships. They also have new responsibilities, such as supporting their teammates and attending games and training sessions on time. Thirty-one of the original 141 players from the 2003 tournament had a job one year after the tournament. 83% of participants say the HWC has helped them improve relationships with their family and friends, and 94% say the tournament had a positive impact on their lives. 71% of participants continue to play soccer, and some have even become professional players or coaches.</p>
+<p>The HWC is not only about helping homeless people improve their lives. It is also a powerful method for changing the way others see homelessness. Many people think and say unkind things about homeless people, but 83% of spectators at the 2016 tournament in Scotland said they now have a more positive attitude to homeless people. This is all as a result of going to the event and watching the games. When spectators hear about the difficult challenges that the participants have to overcome, it helps show the human side of homelessness. The HWC is a perfect example of a simple idea that helps people change their lives in a positive way.</p></div>
+<div class="question"><strong>a. Who founded the Homeless World Cup?</strong><label><input type="radio" name="r1" value="wrong"> Two professional football players</label><label><input type="radio" name="r1" value="correct"> Mel Young and Harald Schmied</label><label><input type="radio" name="r1" value="wrong"> The zoo staff</label><span class="feedback" data-radio-feedback="r1"></span></div>
+<div class="question"><strong>b. What is the main purpose of the HWC?</strong><label><input type="radio" name="r2" value="wrong"> To make money for professional clubs</label><label><input type="radio" name="r2" value="correct"> To improve the lives of people experiencing homelessness</label><label><input type="radio" name="r2" value="wrong"> To train spectators</label><span class="feedback" data-radio-feedback="r2"></span></div>
+<div class="question"><strong>c. According to the text, what percentage of participants said the tournament had a positive impact on their lives?</strong><label><input type="radio" name="r3" value="wrong"> 31%</label><label><input type="radio" name="r3" value="wrong"> 83%</label><label><input type="radio" name="r3" value="correct"> 94%</label><span class="feedback" data-radio-feedback="r3"></span></div>
+</section>
+<section><h2>Answer key</h2><div id="answerKey" hidden>
+<p><strong>1.</strong> a. When she was six; b. In 2006; c. At 5 am; d. In December; e. A few years ago.</p>
+<p><strong>2.</strong> ate, saw, cooked, bought, gave, shared.</p>
+<p><strong>3.</strong> were sleeping, heard, was making, opened, woke, escaped.</p>
+<p><strong>4.</strong> have to; have to (the source's option set is awkward here); have to; can’t; have to; can’t; don’t have to; have to; can’t.</p>
+<p><strong>5.</strong> Scientists: find a cure for cancer; government: build more homes; population: increase to more than 8 billion; robots: do tasks around the house; English: be the most popular language; most cars: drive themselves; summers: get hotter; students: only take courses online.</p>
+<p><strong>6.</strong> Mel Young and Harald Schmied; to improve the lives of people experiencing homelessness; 94%.</p>
+</div><button class="secondary" onclick="document.getElementById('answerKey').hidden=!document.getElementById('answerKey').hidden">Show / hide answer key</button></section>
+<footer>Richmond Activities – Task 2 · Interactive practice</footer>
+</main>
+<script>
+function norm(s){return (s||'').trim().toLowerCase().replace(/[’‘]/g,"'").replace(/\s+/g,' ')}
+function checkAnswers(){
+ let fields=[...document.querySelectorAll('[data-answer]')], correct=0, total=fields.length;
+ fields.forEach(el=>{
+   let val=norm(el.value), ans=norm(el.dataset.answer), ok=val===ans;
+   if(el.tagName==='INPUT' && el.type==='text' && el.dataset.answer.includes('/')) ok=el.dataset.answer.split('/').some(x=>norm(x)===val);
+   let fb=el.parentElement.querySelector('.feedback');
+   if(!fb){fb=document.createElement('span');fb.className='feedback';el.insertAdjacentElement('afterend',fb)}
+   if(ok){correct++;fb.textContent=' ✓ Correct';fb.className='feedback correct'}
+   else {fb.textContent=val?' ✗ Check your answer':' Please answer';fb.className='feedback incorrect'}
+ });
+ ['r1','r2','r3'].forEach(name=>{
+   let chosen=document.querySelector('input[name="'+name+'"]:checked'),fb=document.querySelector('[data-radio-feedback="'+name+'"]');
+   if(chosen&&chosen.value==='correct'){correct++;fb.textContent=' ✓ Correct';fb.className='feedback correct'}
+   else {fb.textContent=chosen?' ✗ Try again':' Please choose an answer';fb.className='feedback incorrect'}
+ });
+ total+=3;
+ document.getElementById('result').textContent='Score: '+correct+' / '+total+' ('+Math.round(correct/total*100)+'%)';
+}
+function showAnswers(){let k=document.getElementById('answerKey');k.hidden=!k.hidden}
+function resetQuiz(){document.querySelectorAll('[data-answer]').forEach(el=>el.value='');document.querySelectorAll('input[type=radio]').forEach(el=>el.checked=false);document.querySelectorAll('.feedback').forEach(el=>{el.textContent='';el.className='feedback'});document.getElementById('result').textContent='';document.getElementById('answerKey').hidden=true}
+</script>
+</body></html>
